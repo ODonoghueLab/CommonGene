@@ -1,0 +1,10 @@
+{
+  "name": "commongene",
+  "version": "0.0.92",
+  "private": false,
+  "main": "./commongene",
+  "dependencies" : {
+	  "interval-tree" : "*"
+  }
+}
+
