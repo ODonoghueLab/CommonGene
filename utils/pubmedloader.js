@@ -1,3 +1,5 @@
+var request = require('request');
+var parseString = require('xml2js').parseString;
 
 /**
  * return an object representing a PubMed article, including pmid, title, authors, geo code, and text Abstract
