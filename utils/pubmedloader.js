@@ -25,7 +25,8 @@ var importPubMed = function (id) {
                       title: base.ArticleTitle[0],
                       authors: authors,
                       geo: base.DataBankList[0].DataBank[0].AccessionNumberList[0].AccessionNumber[0],
-                      textAbstract: base.Abstract[0].AbstractText[0] 
+                      textAbstract: base.Abstract[0].AbstractText[0], 
+                      year: base.ArticleDate[0].Year[0] 
                   };
 //                  console.log(JSON.stringify(result.PubmedArticleSet.PubmedArticle[0].MedlineCitation[0].Article[0], null, 2));
                   resolve(article);
