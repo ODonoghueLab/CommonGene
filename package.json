@@ -1,10 +1,13 @@
 {
   "name": "commongene",
-  "version": "0.0.95",
+  "version": "0.0.96",
   "private": false,
   "main": "./commongene",
   "dependencies" : {
-	  "interval-tree" : "*"
+	  "interval-tree" : "*",
+	  "request" : "*",
+	  "xml2js" : "*"
+
   }
 }
 
