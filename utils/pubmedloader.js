@@ -45,8 +45,7 @@ var importPubMed = function (id) {
                                  base.Journal[0].JournalIssue[0].Issue[0],
                                  "):",
                                  base.Pagination[0].MedlinePgn[0],
-                                 "."].join('');
-                      
+                                 "."].join('')
                   };
 //                  console.log(JSON.stringify(result.PubmedArticleSet.PubmedArticle[0].MedlineCitation[0].Article[0], null, 2));
                   resolve(article);
