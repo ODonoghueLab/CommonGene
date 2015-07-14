@@ -16,10 +16,15 @@ var importPubMed = function (id) {
                       reject(err);
                       return;
                   }
+                  var affiliations = [];
                   var authors = result.PubmedArticleSet.PubmedArticle[0].MedlineCitation[0].Article[0].AuthorList[0].Author.map(function (author) {
+                      if (author.AffiliationInfo) {
+                          affiliations.push(author.AffiliationInfo[0].Affiliation[0]);
+                      }
                       return author.LastName[0] + " " + author.Initials[0];
                   }).join (', ');
-                  var base = result.PubmedArticleSet.PubmedArticle[0].MedlineCitation[0].Article[0]
+                  var base = result.PubmedArticleSet.PubmedArticle[0].MedlineCitation[0].Article[0];
+                  
                   var article = {
                       pmid: id,
                       title: base.ArticleTitle[0],
@@ -30,6 +35,7 @@ var importPubMed = function (id) {
                       month: base.ArticleDate[0].Month[0],
                       day: base.ArticleDate[0].Day[0],
                       journal: base.Journal[0].Title[0],
+                      affiliations: affiliations.join(';'),
                       citation: [base.Journal[0].Title[0],
                                  ". ",
                                  base.ArticleDate[0].Year[0],
