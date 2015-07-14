@@ -1,5 +1,7 @@
 
-
+/**
+ * return an object representing a PubMed article, including pmid, title, authors, geo code, and text Abstract
+ */
 var importPubMed = function (id) {
     return new Promise(function (resolve, reject) {
         
