@@ -1,6 +1,6 @@
 {
   "name": "commongene",
-  "version": "0.0.92",
+  "version": "0.0.93",
   "private": false,
   "main": "./commongene",
   "dependencies" : {
