@@ -10,7 +10,7 @@ var importPubMed = function (id) {
         request('http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&retmode=xml&rettype=abstract&id=' + id, function (error, response, body) {
             
           if (!error && response.statusCode == 200) {
-//              console.log(body);
+              console.log(body);
               parseString(body, function (err, result) {
                   if (err) {
                       reject(err);
