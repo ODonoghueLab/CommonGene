@@ -24,21 +24,24 @@ var importPubMed = function (id) {
                       return author.LastName[0] + " " + author.Initials[0];
                   }).join (', ');
                   var base = result.PubmedArticleSet.PubmedArticle[0].MedlineCitation[0].Article[0];
-                  
+                  var date = base.Journal[0].JournalIssue[0].PubDate[0];
                   var article = {
                       pmid: id,
                       title: base.ArticleTitle[0],
                       authors: authors,
                       geo: base.DataBankList[0].DataBank[0].AccessionNumberList[0].AccessionNumber[0],
                       textAbstract: base.Abstract[0].AbstractText[0], 
-                      year: base.ArticleDate[0].Year[0],
-                      month: base.ArticleDate[0].Month[0],
-                      day: base.ArticleDate[0].Day[0],
+                      year: date.Year[0],
+                      month: date.Month[0],
+                      day: date.Day[0],
+//                      year: base.ArticleDate[0].Year[0],
+//                      month: base.ArticleDate[0].Month[0],
+//                      day: base.ArticleDate[0].Day[0],
                       journal: base.Journal[0].Title[0],
                       affiliations: affiliations.join(';'),
                       citation: [base.Journal[0].Title[0],
                                  ". ",
-                                 base.ArticleDate[0].Year[0],
+                                 date.Year[0],
                                  ";",
                                  base.Journal[0].JournalIssue[0].Volume[0],
                                  "(",
